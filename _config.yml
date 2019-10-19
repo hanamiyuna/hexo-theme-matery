@@ -3,29 +3,52 @@
 menu:
   Index:
     url: /
-    icon: fa-home
+    icon: fas fa-home
   Tags:
     url: /tags
-    icon: fa-tags
+    icon: fas fa-tags
   Categories:
     url: /categories
-    icon: fa-bookmark
+    icon: fas fa-bookmark
   Archives:
     url: /archives
-    icon: fa-archive
+    icon: fas fa-archive
   About:
     url: /about
-    icon: fa-user-circle
-  #Contact:
-    #url: /contact
-    #icon: fa-comments
+    icon: fas fa-user-circle
+  Contact:
+    url: /contact
+    icon: fas fa-comments
   Friends:
     url: /friends
-    icon: fa-address-book
+    icon: fas fa-address-book
+  # 二级菜单写法如下
+  #Medias:
+  #  icon: fas fa-list
+  #  children:
+  #    - name: Musics
+  #      url: /musics
+  #      icon: fas fa-music
+  #    - name: Movies
+  #      url: /movies
+  #      icon: fas fa-film
+  #    - name: Books
+  #      url: /books
+  #      icon: fas fa-book
+  #    - name: Galleries
+  #      url: /galleries
+  #      icon: fas fa-image
 
 # Website start time.
 # 站点运行开始时间.
-time: 06/28/2019 00:00:00 # 格式为:月/日/年 时:分:秒. format: month/day/year hour:minute:second.
+time:
+  enable: true
+  year: 2019 # 年份
+  month: 06 # 月份
+  date: 28 # 日期
+  hour: 00 # 小时
+  minute: 00 # 分钟
+  second: 00 # 秒
 
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
@@ -92,21 +115,21 @@ logo: /medias/logo.png
 indexbtn:
   enable: true
   name: Github
-  icon: fa-github-alt
+  icon: fab fa-github-alt
   url: https://github.com/blinkfox/hexo-theme-matery
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github: 
-  email: 
-  facebook: 
-  twitter: 
-  qq: 
-  weibo: 
-  zhihu: 
-  rss: true
+  github:  # https://github.com/xxx
+  email: # xxx@xxx.com
+  facebook: # https://www.facebook.com/xxx
+  twitter: # https://twitter.com/xxx
+  qq: # 123456789
+  weibo: # https://weibo.com/xxx
+  zhihu: # https://www.zhihu.com/xxx
+  rss: true # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -117,10 +140,12 @@ toc:
   heading: h2, h3, h4
   showToggleBtn: true # 是否显示切换TOC目录展开收缩的按钮
 
-# Whether the code is broken.
-# 代码是否折行
+# 代码块相关
 code:
-  break: true
+  lang: true # 代码块是否显示名称
+  copy: true # 代码块是否可复制
+  shrink: true # 代码块是否可以收缩
+  break: false # 代码是否折行
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
@@ -176,17 +201,17 @@ myProjects:
   enable: true
   data:
     hexo-theme-matery:
-      icon: fa-file-alt
+      icon: fas fa-file-alt
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
       url: http://github.com/blinkfox/hexo-theme-matery
       desc: This is a Hexo blog theme with 'Material Design' and responsive design.
     zealt:
-        icon: fa-database
+        icon: fas fa-database
         iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
         url: https://github.com/blinkfox/zealot
         desc: 一个轻量级的SQL和参数动态生成工具库
     typora-vue-theme:
-        icon: fa-file-alt
+        icon: fas fa-file-alt
         iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
         url: https://github.com/blinkfox/typora-vue-theme
         desc: This is a typora theme inspired by Vue document style.
@@ -309,12 +334,21 @@ googleAnalytics:
   enable: false
   id:
 
+# Add baidu analytics configuration
+# 添加 baidu Analytics 配置
+baiduAnalytics:
+  enable: false
+  id: 
+  
+# 百度搜索资源平台提交链接
+baiduPush: true
+
 # The used front-end library can be replaced with the corresponding CDN address as needed,
 # If the specific version is not specified below, you can use the latest version.
 # 使用到的前端库，可按需替换成对应的CDN地址，如果下面未指定具体的版本号，使用最新的版本即可.
 libs:
   css:
-    fontAwesome: /libs/awesome/css/all.min.css # V4.7.0
+    fontAwesome: /libs/awesome/css/all.css # V5.11.1
     materialize: /libs/materialize/materialize.min.css # 1.0.0
     aos: /libs/aos/aos.css
     animate: /libs/animate/animate.min.css # V3.5.1
@@ -338,7 +372,7 @@ libs:
     crypto: /libs/cryptojs/crypto-js.min.js
     echarts: /libs/echarts/echarts.min.js
     gitalk: /libs/gitalk/gitalk.min.js
-    valine: https://unpkg.com/valine@1.3.10/dist/Valine.min.js # 1.3.10  若想保持最新版，请替换为 https://unpkg.com/valine@1.3.10/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
+    valine: /libs/valine/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
     jqcloud: /libs/jqcloud/jqcloud-1.0.4.min.js
     tocbot: /libs/tocbot/tocbot.min.js
     canvas_nest: /libs/background/canvas-nest.js
@@ -440,10 +474,16 @@ addthis:
   pubid:  #前往https://www.addthis.com/获取
   
 # 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
 subtitle: 
   enable: true
-  sub1: 从来没有真正的绝境，只有心灵的迷途
-  sub2: Never really desperate, only the lost of the soul # 如果有 ‘ ，请在 ’ 前面加上 \
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub1: 从来没有真正的绝境, 只有心灵的迷途
+  sub2: Never really desperate, only the lost of the soul
   
 # 手机二级菜单.
 navMenu:
@@ -451,8 +491,16 @@ navMenu:
   bgColor: " " # 二级侧栏子菜单背景颜色,留空即为全局背景色
 
 # 网页预加载.
-instantpage: true
+instantpage: 
+  enable: true
 
 # banner 是否每日切换.
 # 若为 false, 则 banner 默认为 /medias/banner/0.jpg
-banner: true
+banner: 
+  enable: true
+
+#ICP备案信息尾部显示
+icp:
+  enable: false
+  url: # 备案链接
+  text: # 备案信息

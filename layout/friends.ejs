@@ -42,6 +42,9 @@
         line-height: 0.8rem;
         padding-bottom: 16px;
         border-bottom: 2px solid #fff;
+        position: relative;
+        top:-15px;
+        left: 3px;
     }
 
     .friend-button {
@@ -191,7 +194,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="tag-title center-align">
-                    <i class="fa fa-address-book"></i>&nbsp;&nbsp;<%= __('friends') %>
+                    <i class="fas fa-address-book"></i>&nbsp;&nbsp;<%= __('friends') %>
                 </div>
                 <article id="friends-link">
                     <% if (site.data && site.data.friends) { %>
@@ -206,7 +209,7 @@
                                         <img src="<%- friend.avatar %>" alt="img">
                                         <div>
                                             <h1 class="friend-name"><%- friend.name %></h1>
-                                            <p><%- friend.introduction %></p>
+                                            <p style="position: relative;top: -35px;"><%- friend.introduction %></p>
                                         </div>
                                     </div>
                                     <div class="friend-button">

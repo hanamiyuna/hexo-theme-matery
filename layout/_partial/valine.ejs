@@ -26,7 +26,7 @@
         padding: 0 2px;
         color: #42b983;
         font-weight: 500;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     #vcomments img {
@@ -235,11 +235,11 @@
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div id="vcomments" class="card-content"></div>
+    <div id="vcomments" class="card-content" style="display: grid"></div>
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="<%- theme.libs.libs.valine %>"></script>
+<script src="<%- theme.libs.js.valine %>"></script>
 <script>
     new Valine({
         el: '#vcomments',
